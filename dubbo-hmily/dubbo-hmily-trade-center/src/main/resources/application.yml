@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: trade-center
+
+dubbo:
+  application:
+    name: trade-center
+  protocol:
+    name: dubbo
+    port: 18080
+  registry:
+    address: zookeeper://127.0.0.1:2181
+
+org:
+  dromara:
+    hmily:
+      serializer: kryo
+      recoverDelayTime: 128
+      retryMax: 10
+      scheduledDelay: 128
+      scheduledThreadMax: 10
+      repositorySupport: db
+      started: true
+      hmilyDbConfig:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/tcc?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=true
+        username: bigdata
+        password: 123456
