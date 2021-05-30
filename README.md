@@ -21,12 +21,13 @@ A用户的转出转入逻辑实现在banka服务中，B用户的转出转入逻�
 - dubbo-hmily-bankb-service模块为bankb服务，核心代码为com.geek.capacity.BankBApiImpl，配置文件请见同模块下的application.yml和hmily.yml
 - dubbo-hmily-trade-center模块为trade-center服务，核心代码为com.geek.TradeServiceImpl，配置文件请见同模块下的application.yml和hmily.yml
   
+  测试请先运行sql文件，建立框架和业务所需的库表和数据。然后启动zookeeper(v3.4.14)服务，修改配置文件中数据库和zookeeper的内容，再分别启动3个模块即可  
   请求url:http://localhost:8080/trade/exchange  
   请求方式: POST  
   请求体：  
   {  
 	  "txId": 123456,  
-    "fromUserId":1,  
+      	  "fromUserId":1,  
 	  "toUserId":2,  
 	  "exchangeFund": 7,  
 	  "exchangeRate":0.7  
