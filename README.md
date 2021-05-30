@@ -20,3 +20,14 @@ A用户的转出转入逻辑实现在banka服务中，B用户的转出转入逻�
 - dubbo-hmily-banka-service模块为banka服务，核心代码为com.geek.capacity.BankAApiImpl，配置文件请见同模块下的application.yml和hmily.yml
 - dubbo-hmily-bankb-service模块为bankb服务，核心代码为com.geek.capacity.BankBApiImpl，配置文件请见同模块下的application.yml和hmily.yml
 - dubbo-hmily-trade-center模块为trade-center服务，核心代码为com.geek.TradeServiceImpl，配置文件请见同模块下的application.yml和hmily.yml
+  
+  请求url:http://localhost:8080/trade/exchange  
+  请求方式: POST  
+  请求体：  
+  {  
+	  "txId": 123456,  
+    "fromUserId":1,  
+	  "toUserId":2,  
+	  "exchangeFund": 7,  
+	  "exchangeRate":0.7  
+}
