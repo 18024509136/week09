@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 @EnableAspectJAutoProxy
 @Component
 @Aspect
-public class RpcClientProxy {
+public class RpcClientAopProxy {
 
     @Autowired
     private RpcClient rpcClient;

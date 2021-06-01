@@ -13,7 +13,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class ClientApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.geek");
-        OrderService orderService = applicationContext.getBean(OrderService.class);
+        // 获取orderServiceFacade对象，后续让aop去代理增强
+        // OrderService orderService = applicationContext.getBean(OrderService.class);
+
+        // 使用cglib来代理orderService接口
+        RpcClientCglibProxy cglibProxy = applicationContext.getBean(RpcClientCglibProxy.class);
+        OrderService orderService = cglibProxy.createProxy(OrderService.class);
 
         Order order = new Order();
         order.setTotalAmount(2);

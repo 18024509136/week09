@@ -21,7 +21,8 @@
         <netty.version>4.1.60.Final</netty.version>
         <lombok.version>1.18.16</lombok.version>
         <spring.version>5.0.2.RELEASE</spring.version>
-        <protostuff.version>1.6.0</protostuff.version>
+        <protostuff.version>1.7.2</protostuff.version>
+        <cglib.version>3.2.12</cglib.version>
     </properties>
 
     <dependencyManagement>
@@ -55,12 +56,19 @@
             <dependency>
                 <groupId>io.protostuff</groupId>
                 <artifactId>protostuff-core</artifactId>
-                <version>1.7.2</version>
+                <version>${protostuff.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>io.protostuff</groupId>
                 <artifactId>protostuff-runtime</artifactId>
-                <version>1.7.2</version>
+                <version>${protostuff.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
             </dependency>
 
         </dependencies>
