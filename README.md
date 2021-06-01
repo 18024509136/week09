@@ -1,6 +1,6 @@
 ### 作业1 ###
 由于官方提供的demo有些乱，所以按照样例自己实现了一个完整的Rpc Demo，并在作业要求的基础上做了一些改进 
-- my-rpc-client模块为Rpc客户端框架，基于AOP实现API调用的拦截和远程调用，aop核心代码为com.geek.RpcClientProxy。  
+- my-rpc-client模块为Rpc客户端框架，基于AOP以及cglib实现API调用的拦截和远程调用，aop核心代码为com.geek.RpcClientProxy，cglib核心代码是com.geek.ServiceFacade和com.geek.RpcClientCglibProxy。  
 底层通信采用netty客户端，序列化方式采用protostuff，核心代码为com.geek.RpcClient。目前netty客户端只支持单线程调用，有待改进。
 - my-rpc-server模块为Rpc服务端框架。核心代码有com.geek.RpcServer，用于远程服务映射构建和netty服务的启动。远程服务映射是基于@RpcService注解在项目启动时获取到接口限定名和spring管理的业务实现类的映射关系。  
 com.geek.RpcHandler作用是通过请求的接口限定名找到业务实现类，然后通过反射调用目标实现类。
