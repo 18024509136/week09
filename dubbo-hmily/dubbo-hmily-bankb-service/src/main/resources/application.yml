@@ -25,19 +25,3 @@ mybatis-plus:
     auto-mapping-behavior: full
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:mapper/**/*Mapper.xml
-
-org:
-  dromara:
-    hmily:
-      serializer: kryo
-      recoverDelayTime: 128
-      retryMax: 10
-      scheduledDelay: 128
-      scheduledThreadMax: 10
-      repositorySupport: db
-      started: true
-      hmilyDbConfig:
-        driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/tcc?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=true
-        username: bigdata
-        password: 123456
